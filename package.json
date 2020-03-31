@@ -14,10 +14,8 @@
     "lint:fix": "tslint --fix ./src/**/*.ts -t verbose",
     "prettier": "prettier --write '**/*.{ts,js,json,css,scss,html}'",
     "format": "npm run prettier && npm run lint:fix",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
-    "test:prod": "npm run lint && npm run test -- --no-cache",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "rxjs": "^6.5.4"
@@ -25,7 +23,6 @@
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "@types/node": "^12.12.6",
-    "coveralls": "^3.0.9",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "jest-marbles": "^2.5.1",

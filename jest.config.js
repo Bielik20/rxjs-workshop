@@ -1,10 +1,6 @@
 module.exports = {
-  roots: ['<rootDir>/spec'],
+  roots: ['<rootDir>/examples', '<rootDir>/exercises'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-  collectCoverageFrom: [
-    'spec/**/*.ts',
-    '!spec/__helpers/**/*.ts',
-  ],
 };
