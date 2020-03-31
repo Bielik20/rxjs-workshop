@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/commonjs",
+    "lib": ["es2017", "dom"],
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": false,
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node"
+  },
+  "include": ["src"]
+}
