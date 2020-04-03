@@ -1,6 +1,4 @@
 import { cold } from 'jest-marbles';
-import { merge } from 'rxjs';
-import { filter, map, scan, startWith, switchMap, takeUntil } from 'rxjs/operators';
 
 describe('Warmup', () => {
   it('map - multiply values', () => {
@@ -8,7 +6,7 @@ describe('Warmup', () => {
     const expected$ = cold('-a-b-c-', { a: 2, b: 20, c: 200 });
 
     // ##### Answer #####
-    const stream$ = input$.pipe(map((value) => value * 2));
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -19,7 +17,7 @@ describe('Warmup', () => {
     const expected$ = cold('-a---c-', { a: 2, c: 4 });
 
     // ##### Answer #####
-    const stream$ = input$.pipe(filter((value) => value % 2 === 0));
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -30,7 +28,7 @@ describe('Warmup', () => {
     const expected$ = cold('-a-b-c-', { a: 2, b: 5, c: 9 });
 
     // ##### Answer #####
-    const stream$ = input$.pipe(scan((sum, curr) => sum + curr, 0));
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -42,7 +40,7 @@ describe('Warmup', () => {
     const expected$ = cold('-ab-aba');
 
     // ##### Answer #####
-    const stream$ = merge(a$, b$);
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -54,7 +52,7 @@ describe('Warmup', () => {
     const expected$ = cold('-a|');
 
     // ##### Answer #####
-    const stream$ = a$.pipe(takeUntil(b$));
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -65,7 +63,7 @@ describe('Warmup', () => {
     const expected$ = cold('s---a-a');
 
     // ##### Answer #####
-    const stream$ = a$.pipe(startWith('s'));
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -77,7 +75,7 @@ describe('Warmup', () => {
     const expected$ = cold('bb-bb');
 
     // ##### Answer #####
-    const stream$ = a$.pipe(switchMap(() => b$));
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);

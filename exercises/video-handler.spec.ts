@@ -1,6 +1,4 @@
 import { hot, Scheduler } from 'jest-marbles';
-import { merge, of } from 'rxjs';
-import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 
 describe('Video Handler', () => {
   it('Wait for instance and respond to UI change', () => {
@@ -10,9 +8,7 @@ describe('Video Handler', () => {
     const expected$ = hot('---i-iii-');
 
     // ##### Answer #####
-    const stream$ = instance$.pipe(
-      switchMap((value) => merge(scroll$, resize$, of({})).pipe(map(() => value))),
-    );
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -24,7 +20,7 @@ describe('Video Handler', () => {
     const expected$ = hot(  '---i|');
 
     // ##### Answer #####
-    const stream$ = changes$.pipe(takeUntil(transition$));
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -35,7 +31,7 @@ describe('Video Handler', () => {
     const changes$ = hot('---i-iii-');
 
     // ##### Answer #####
-    const stream$ = changes$.pipe(tap(updateUI));
+    const stream$ = null;
     // ##################
 
     expect(stream$).toSatisfyOnFlush(() => {
@@ -52,11 +48,7 @@ describe('Video Handler', () => {
     const expected$ = hot(  '---i|');
 
     // ##### Answer #####
-    const stream$ = instance$.pipe(
-      switchMap((value) => merge(scroll$, resize$, of({})).pipe(map(() => value))),
-      tap(updateUI),
-      takeUntil(transition$),
-    );
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);

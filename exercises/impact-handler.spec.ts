@@ -1,6 +1,4 @@
 import { hot, Scheduler } from 'jest-marbles';
-import { merge } from 'rxjs';
-import { startWith, takeUntil, tap } from 'rxjs/operators';
 
 describe('Impact Handler', () => {
   /**
@@ -19,21 +17,7 @@ describe('Impact Handler', () => {
     const expected$ = hot(  'as---sr|');
 
     // ##### Answer #####
-    const a$ = resize$.pipe(
-      startWith('a'),
-      tap(() => {
-        scrollUI();
-        resizeUI();
-      }),
-      takeUntil(transition$),
-    );
-    const b$ = scroll$.pipe(
-      tap(() => {
-        scrollUI();
-      }),
-      takeUntil(transition$),
-    );
-    const stream$ = merge(a$, b$);
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);

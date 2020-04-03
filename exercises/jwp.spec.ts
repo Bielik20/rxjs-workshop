@@ -1,5 +1,4 @@
 import { hot, Scheduler } from 'jest-marbles';
-import { filter, map, scan, withLatestFrom } from 'rxjs/operators';
 
 describe('JWPlayer', () => {
   /**
@@ -44,15 +43,7 @@ describe('JWPlayer', () => {
     });
 
     // ##### Answer #####
-    const depth$ = player$.pipe(
-      filter((event) => event === 'p'),
-      scan((depth) => depth + 1, 0),
-    );
-    const state$ = player$.pipe(map(() => stateGetter()));
-    const stream$ = player$.pipe(
-      withLatestFrom(depth$, state$),
-      map(([event, depth, state]) => ({ event, depth, state })),
-    );
+    const stream$ = null;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
