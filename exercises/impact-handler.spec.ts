@@ -13,10 +13,10 @@ describe('Impact Handler', () => {
   it('update UI', () => {
     const scrollUI = jest.fn();
     const resizeUI = jest.fn();
-    const scroll$ = hot('-s---s--s');
-    const resize$ = hot('------r--');
+    const scroll$ = hot(    '-s---s--s');
+    const resize$ = hot(    '------r--');
     const transition$ = hot('-------t');
-    const expected$ = hot('as---sr|');
+    const expected$ = hot(  'as---sr|');
 
     // ##### Answer #####
     const a$ = resize$.pipe(

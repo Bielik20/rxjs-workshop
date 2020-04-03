@@ -3,9 +3,9 @@ import { map } from 'rxjs/operators';
 
 describe('Transformation - map', () => {
   it('map', () => {
-    const source$ = cold('---a-b-c');
-    const stream$ = source$.pipe(map((value) => value.toString().toUpperCase()));
+    const source$ = cold(  '---a-b-c');
     const expected$ = cold('---A-B-C');
+    const stream$ = source$.pipe(map((value) => value.toString().toUpperCase()));
 
     expect(stream$).toBeObservable(expected$);
   });

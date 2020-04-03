@@ -5,8 +5,8 @@ import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 describe('Video Handler', () => {
   it('Wait for instance and respond to UI change', () => {
     const instance$ = hot('---i-');
-    const scroll$ = hot('-s---s-s-');
-    const resize$ = hot('------r--');
+    const scroll$ = hot(  '-s---s-s-');
+    const resize$ = hot(  '------r--');
     const expected$ = hot('---i-iii-');
 
     // ##### Answer #####
@@ -19,9 +19,9 @@ describe('Video Handler', () => {
   });
 
   it('Stop when transition', () => {
-    const changes$ = hot('---i-iii-');
+    const changes$ = hot(   '---i-iii-');
     const transition$ = hot('----t-t--t');
-    const expected$ = hot('---i|');
+    const expected$ = hot(  '---i|');
 
     // ##### Answer #####
     const stream$ = changes$.pipe(takeUntil(transition$));
@@ -45,11 +45,11 @@ describe('Video Handler', () => {
 
   it('Everything together', () => {
     const updateUI = jest.fn();
-    const instance$ = hot('---i-');
-    const scroll$ = hot('-s---s-s-');
-    const resize$ = hot('------r--');
+    const instance$ = hot(  '---i-');
+    const scroll$ = hot(    '-s---s-s-');
+    const resize$ = hot(    '------r--');
     const transition$ = hot('----t-t--t');
-    const expected$ = hot('---i|');
+    const expected$ = hot(  '---i|');
 
     // ##### Answer #####
     const stream$ = instance$.pipe(

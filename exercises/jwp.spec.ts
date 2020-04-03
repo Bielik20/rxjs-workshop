@@ -9,7 +9,7 @@ describe('JWPlayer', () => {
    */
   it('should model stream', () => {
     const stateGetter = createStateGetter();
-    const player$ = hot('-p--i-c---p-i--c');
+    const player$ = hot(  '-p--i-c---p-i--c');
     const expected$ = hot('-a--b-c---d-e--f', {
       a: {
         event: 'p',
