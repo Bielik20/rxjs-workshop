@@ -48,7 +48,7 @@ describe('Warmup', () => {
     expect(stream$).toBeObservable(expected$);
   });
 
-  it('takeUnit - complete stream a$ with stream b$', () => {
+  it('takeUntil - complete stream a$ with stream b$', () => {
     const a$ = cold(       '-a--a-a');
     const b$ = cold(       '--b');
     const expected$ = cold('-a|');

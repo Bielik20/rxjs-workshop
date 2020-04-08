@@ -4,7 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 describe('Filtering - takeUntil', () => {
   it('takeUntil', () => {
     const source$ = cold(      '---a-b-c');
-    const cancellation$ = cold('----b');
+    const cancellation$ = cold('----x');
     const expected$ = cold(    '---a|');
     const stream$ = source$.pipe(takeUntil(cancellation$));
 

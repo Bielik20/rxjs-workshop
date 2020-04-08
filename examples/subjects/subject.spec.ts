@@ -34,9 +34,6 @@ describe('Subject', () => {
     subject$.next();
     subject$.next();
 
-    expect(valueSpy).toBeCalledTimes(0);
-    expect(completeSpy).toBeCalledTimes(0);
-
     subject$.subscribe(valueSpy, errorSpy, completeSpy);
 
     subject$.complete();
