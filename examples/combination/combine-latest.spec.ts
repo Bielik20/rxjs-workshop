@@ -11,6 +11,7 @@ describe('Combination - combineLatest', () => {
       h: ['c', 'd'],
       i: ['c', 'e'],
     });
+
     const stream$ = combineLatest([a$, b$]);
 
     expect(stream$).toBeObservable(expected$);

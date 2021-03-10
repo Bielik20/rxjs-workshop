@@ -6,6 +6,7 @@ describe('Flattening - mergeMap = flatMap', () => {
     const a$ = cold(       '-a--a------');
     const b$ = cold(       'b---c');
     const expected$ = cold('-b--bc--c-');
+
     const stream$ = a$.pipe(mergeMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);
@@ -15,6 +16,7 @@ describe('Flattening - mergeMap = flatMap', () => {
     const a$ = hot(       '-a--a------');
     const b$ = hot(       'b---c');
     const expected$ = hot('----(cc)-');
+
     const stream$ = a$.pipe(mergeMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);

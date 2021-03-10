@@ -5,6 +5,7 @@ describe('Utility - tap', () => {
   it('tap', () => {
     const spy = jest.fn();
     const source$ = cold('---a-b-c');
+
     const stream$ = source$.pipe(tap(spy));
 
     expect(stream$).toSatisfyOnFlush(() => {

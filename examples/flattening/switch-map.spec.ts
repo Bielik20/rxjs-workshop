@@ -6,6 +6,7 @@ describe('Flattening - switchMap', () => {
     const a$ = cold(       '-a--a------');
     const b$ = cold(       'b---c');
     const expected$ = cold('-b--b---c-');
+
     const stream$ = a$.pipe(switchMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);
@@ -15,6 +16,7 @@ describe('Flattening - switchMap', () => {
     const a$ = hot(       '-a--a------');
     const b$ = hot(       'b---c');
     const expected$ = hot('----c-----');
+
     const stream$ = a$.pipe(switchMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);
@@ -24,6 +26,7 @@ describe('Flattening - switchMap', () => {
     const a$ = hot(        '-a--a------');
     const b$ = cold(       'b---c');
     const expected$ = cold('-b--b---c-');
+
     const stream$ = a$.pipe(switchMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);
@@ -33,6 +36,7 @@ describe('Flattening - switchMap', () => {
     const a$ = cold(      '-a--a------');
     const b$ = hot(       'b---c');
     const expected$ = hot('----c-----');
+
     const stream$ = a$.pipe(switchMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);

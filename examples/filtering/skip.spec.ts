@@ -5,6 +5,7 @@ describe('Filtering - skip', () => {
   it('skip', () => {
     const source$ = cold(  '---a-b-c');
     const expected$ = cold('-----b-c');
+
     const stream$ = source$.pipe(skip(1));
 
     expect(stream$).toBeObservable(expected$);

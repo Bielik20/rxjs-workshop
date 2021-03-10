@@ -9,6 +9,7 @@ describe('Combination - withLatestFrom', () => {
       f: ['b', 'd'],
       g: ['c', 'd'],
     });
+
     const stream$ = a$.pipe(withLatestFrom(b$));
 
     expect(stream$).toBeObservable(expected$);

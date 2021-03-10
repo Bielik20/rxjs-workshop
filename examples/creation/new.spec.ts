@@ -39,6 +39,7 @@ describe('Creation - new', () => {
 
     stream$.subscribe(valueSpy, errorSpy, completeSpy);
     expect(valueSpy).toBeCalledTimes(2);
+    expect(teardownSpy).toBeCalledTimes(0);
     expect(completeSpy).toBeCalledTimes(0);
   });
 
@@ -49,6 +50,7 @@ describe('Creation - new', () => {
       subscriber.next();
     });
 
+    expect(createSpy).toBeCalledTimes(0);
     stream$.subscribe();
     expect(createSpy).toBeCalledTimes(1);
     stream$.subscribe();

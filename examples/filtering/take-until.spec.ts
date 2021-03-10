@@ -6,6 +6,7 @@ describe('Filtering - takeUntil', () => {
     const source$ = cold(      '---a-b-c');
     const cancellation$ = cold('----x');
     const expected$ = cold(    '---a|');
+
     const stream$ = source$.pipe(takeUntil(cancellation$));
 
     expect(stream$).toBeObservable(expected$);

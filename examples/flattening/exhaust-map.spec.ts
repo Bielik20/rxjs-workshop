@@ -6,6 +6,7 @@ describe('Flattening - exhaustMap', () => {
     const a$ = cold(       '-a--a--a----');
     const b$ = cold(       'b---c|');
     const expected$ = cold('-b---c-b---c');
+
     const stream$ = a$.pipe(exhaustMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);
@@ -15,6 +16,7 @@ describe('Flattening - exhaustMap', () => {
     const a$ = cold(       '-a--a--a----');
     const b$ = cold(       'b---c');
     const expected$ = cold('-b---c');
+
     const stream$ = a$.pipe(exhaustMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);
@@ -24,6 +26,7 @@ describe('Flattening - exhaustMap', () => {
     const a$ = hot(       '-a--a--a----');
     const b$ = hot(       'b---c|');
     const expected$ = hot('----c-----');
+
     const stream$ = a$.pipe(exhaustMap(() => b$));
 
     expect(stream$).toBeObservable(expected$);
