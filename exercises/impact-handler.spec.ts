@@ -17,7 +17,7 @@ describe('Impact Handler', () => {
     const expected$ = hot(  'as---sr|');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);

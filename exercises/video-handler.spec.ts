@@ -8,7 +8,7 @@ describe('Video Handler', () => {
     const expected$ = hot('---i-iii-');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -20,7 +20,7 @@ describe('Video Handler', () => {
     const expected$ = hot(  '---i|');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -31,7 +31,7 @@ describe('Video Handler', () => {
     const changes$ = hot('---i-iii-');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toSatisfyOnFlush(() => {
@@ -48,7 +48,7 @@ describe('Video Handler', () => {
     const expected$ = hot(  '---i|');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);

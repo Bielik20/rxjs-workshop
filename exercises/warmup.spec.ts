@@ -6,7 +6,7 @@ describe('Warmup', () => {
     const expected$ = cold('-a-b-c-', { a: 2, b: 20, c: 200 });
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -17,7 +17,7 @@ describe('Warmup', () => {
     const expected$ = cold('-a---c-', { a: 2, c: 4 });
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -28,7 +28,7 @@ describe('Warmup', () => {
     const expected$ = cold('-a-b-c-', { a: 2, b: 5, c: 9 });
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -40,7 +40,7 @@ describe('Warmup', () => {
     const expected$ = cold('-ab-aba');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -52,7 +52,7 @@ describe('Warmup', () => {
     const expected$ = cold('-a|');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -63,7 +63,7 @@ describe('Warmup', () => {
     const expected$ = cold('s---a-a');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
@@ -75,7 +75,7 @@ describe('Warmup', () => {
     const expected$ = cold('bb-bb');
 
     // ##### Answer #####
-    const stream$ = null;
+    const stream$ = null as any;
     // ##################
 
     expect(stream$).toBeObservable(expected$);
